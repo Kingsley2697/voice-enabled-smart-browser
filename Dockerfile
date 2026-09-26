@@ -1,7 +1,10 @@
 FROM php:8.3-apache
 
-RUN docker-php-ext-install pdo_mysql curl \
-    && a2enmod rewrite
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libcurl4-openssl-dev pkg-config \
+    && docker-php-ext-install pdo_mysql curl \
+    && a2enmod rewrite \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html
