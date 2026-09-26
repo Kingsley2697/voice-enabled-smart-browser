@@ -12,7 +12,8 @@ if (!isset($pageTitle)) { $pageTitle = 'VoiceBrowser'; }
 <body>
   <header class="site-header">
     <a class="brand" href="index.html">Voice<span>Browser</span></a>
-    <nav aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Open menu</span><span></span><span></span><span></span></button>
+    <nav id="primary-navigation" class="site-navigation" aria-label="Main navigation">
       <a href="index.html">Home</a><a href="speak.html">Speak</a><a href="listen.html">Listen</a><a href="about.html">About</a>
     </nav>
   </header>
